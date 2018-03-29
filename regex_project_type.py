@@ -1,5 +1,7 @@
 import re
 
+import constants
+
 
 class RegexProjectGenerator(object):
     def __init__(self, types):
@@ -9,7 +11,7 @@ class RegexProjectGenerator(object):
         regex = []
         for type in self._types:
             if type == 'python':
-                regex.append('(.*\.py)')
+                regex.append(constants.PYTHON_REGEX)
             if type == 'go':
-                regex.append('(.*\.go)')
+                regex.append(constants.GO_REGEX)
         return regex
